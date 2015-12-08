@@ -738,4 +738,48 @@ namespace AreaCalculator
             }
         }
     }
+    
+    //Shapes
+    public abstract class Shape
+    {
+        public abstract double getArea();
+    }
+    
+    
+    public class Rectangle : Shape
+    {
+        private double length;
+        private double height;
+
+        public Rectangle()
+        {
+            length = 0;
+            height = 0;
+        }
+
+        public Rectangle(double length, double height)
+        {
+            this.length = length;
+            this.height = height;
+        }
+
+        public virtual void setLength(double length)
+        {
+            this.length = length;
+        }
+
+        public virtual void setHeight(double height)
+        {
+            this.height = height;
+        }
+
+        public override double getArea()
+        {
+            return Math.Round(length * height, 2);
+        }
+    }
+    
+    
+    
+    
 }
